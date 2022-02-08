@@ -1,0 +1,150 @@
+// Import Bulma's core
+@import "~bulma/sass/utilities/_all";
+
+// Set your colors
+$primary: #3298dc;
+$primary-light: findLightColor($primary);
+$primary-dark: findDarkColor($primary);
+$primary-invert: findColorInvert($primary);
+$twitter: #4099FF;
+$twitter-invert: findColorInvert($twitter);
+
+// Lists and maps
+$custom-colors: null !default;
+$custom-shades: null !default;
+
+// Setup $colors to use as bulma classes (e.g. 'is-twitter')
+$colors: mergeColorMaps(
+    (
+        "white": (
+            $white,
+            $black,
+        ),
+        "black": (
+            $black,
+            $white,
+        ),
+        "light": (
+            $light,
+            $light-invert,
+        ),
+        "dark": (
+            $dark,
+            $dark-invert,
+        ),
+        "primary": (
+            $primary,
+            $primary-invert,
+            $primary-light,
+            $primary-dark,
+        ),
+        "link": (
+            $link,
+            $link-invert,
+            $link-light,
+            $link-dark,
+        ),
+        "info": (
+            $info,
+            $info-invert,
+            $info-light,
+            $info-dark,
+        ),
+        "success": (
+            $success,
+            $success-invert,
+            $success-light,
+            $success-dark,
+        ),
+        "warning": (
+            $warning,
+            $warning-invert,
+            $warning-light,
+            $warning-dark,
+        ),
+        "danger": (
+            $danger,
+            $danger-invert,
+            $danger-light,
+            $danger-dark,
+        ),
+    ),
+    $custom-colors
+);
+
+// Links
+$link: $primary;
+$link-invert: $primary-invert;
+$link-focus-border: $primary;
+
+// Import Bulma and Buefy styles
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
+
+.has-cursor-pointer {
+    cursor: pointer;
+  }
+  .has-text-breaked {
+    word-break: break-all;
+  }
+  .is-clickable {
+    cursor: pointer;
+  }
+  
+  #app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+  }
+  
+  #nav {
+    padding: 30px;
+  
+    a {
+      font-weight: bold;
+      color: #2c3e50;
+  
+      &.router-link-exact-active {
+        color: #42b983;
+      }
+    }
+  }
+  
+  .weather-image{
+    height: 150px;
+      width: 170px;
+  }
+  .margin-o-auto {
+    margin: 0 auto;
+  }
+  .temperature{
+        display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -ms-flex-pack: center;
+      justify-content: center;
+  }
+  .temperature-value {
+    font-size: 5em;
+  }
+  
+  .temperature-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .temperature-scale {
+    font-size: 1em;
+    font-weight: bold;
+  }
+  .temperature-high img {
+    vertical-align: middle;
+  }
+  
+  .mperature-low img {
+    vertical-align: middle;
+  }
